@@ -13,13 +13,17 @@ import {
   View,
 } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import Homepage from './Pages/Homepage.tsx';
 
 const App = () => {
   return (
     <ThirdwebProvider
       activeChain="mumbai"
       supportedWallets={[metamaskWallet(), rainbowWallet()]}>
-      <AppInner />
+      <NavigationContainer>
+        <Homepage />
+      </NavigationContainer>
     </ThirdwebProvider>
   );
 };
